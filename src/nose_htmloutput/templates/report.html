@@ -14,7 +14,7 @@ body {
 table, td, th, .dataid {
     border: 1px solid #aaa;
     border-collapse: collapse;
-    background: #fff;
+    background: #dddddd;
 }
 section {
     background: rgba(0, 0, 0, 0.05);
@@ -37,14 +37,14 @@ h4 {
 }
 h1, h2, h3, h4, a[href] {
     cursor: pointer;
-    color: #0074d9;
+    color: #4c56d9;
     text-decoration: none;
 }
 h3 strong, a.failed {
-    color: #ff4136;
+    color: salmon;
 }
 a.success {
-    color: #3d9970;
+    color: #4c992e;
 }
 pre {
     font-family: monospace;
@@ -68,6 +68,7 @@ section:target .test-details {
             <tr>
                 <th>Class</th>
                 <th>Fail</th>
+                <th>Error</th>
                 <th>Skip</th>
                 <th>Success</th>
                 <th>Total</th>
@@ -76,6 +77,7 @@ section:target .test-details {
                 <tr>
                     <td>{{ class }}</td>
                     <td>{{ group.stats.failures }}</td>
+                    <td>{{ group.stats.errors }}</td>
                     <td>{{ group.stats.skipped  }}</td>
                     <td>{{ group.stats.passes   }}</td>
                     <td>{{ group.stats.total    }}</td>
@@ -84,6 +86,7 @@ section:target .test-details {
             <tr>
                 <td><strong>Total</strong></td>
                 <td>{{ stats.failures }}</td>
+                <td>{{ stats.errors   }}</td>
                 <td>{{ stats.skipped  }}</td>
                 <td>{{ stats.passes   }}</td>
                 <td>{{ stats.total    }}</td>
